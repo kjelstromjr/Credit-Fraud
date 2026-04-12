@@ -6,6 +6,7 @@ from sklearn.metrics import classification_report, confusion_matrix, roc_auc_sco
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import LinearSVC
 from sklearn.linear_model import LogisticRegression
+from pathlib import Path
 
 # Download latest version
 path = kagglehub.dataset_download("kaushalnandania/credit-card-fraud-detection")
@@ -14,10 +15,10 @@ print("Path to dataset files:", path)
 
 # Load in datasets for training and testing
 print("Loading training data...")
-train_df = pd.read_csv(path + '\\train.csv')
+train_df = pd.read_csv(Path(path) / "train.csv")
 
 print("Loading testing data...")
-test_df = pd.read_csv(path + '\\test.csv')
+test_df = pd.read_csv(Path(path) / "test.csv")
 
 # Check for missing values
 print(f"Missing values: {train_df.isnull().sum().sum()}")
