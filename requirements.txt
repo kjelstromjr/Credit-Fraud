@@ -1,0 +1,6 @@
+kagglehub
+pandas
+scikit-learn
+category_encoders
+pathlib
+matplotlib
